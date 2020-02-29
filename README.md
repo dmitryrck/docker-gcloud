@@ -15,3 +15,12 @@ $ docker run --rm -it \
   -w ${HOME} \
   dmitryrck/gcloud bash
 ```
+
+# #Protip
+
+This is my `~/.bashrc` after I set up this in my machine (it has to be inside the running container):
+
+```shell
+source /etc/bash_completion
+source <(kubectl completion bash)
+```
