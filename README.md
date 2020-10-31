@@ -16,11 +16,25 @@ $ docker run --rm -it \
   dmitryrck/gcloud bash
 ```
 
-# #Protip
+`gcloud` without docker:
 
-This is my `~/.bashrc` after I set up this in my machine (it has to be inside the running container):
+
+```
+docker run --rm -it \
+  -v /path/where-to-save-gcloud:${HOME} \
+  -v /etc/passwd:/etc/passwd:ro \
+  -v /etc/group:/etc/group:ro \
+  -w ${HOME} \
+  dmitryrck/gcloud bash
+```
+
+# #Protips
+
+(1) This is my `~/.bashrc` after I set up this in my machine (it has to be inside the running container):
 
 ```shell
 source /etc/bash_completion
 source <(kubectl completion bash)
 ```
+
+(2) Use this to know how to login: https://cloud.google.com/sdk/gcloud/reference/auth/login
