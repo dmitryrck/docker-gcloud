@@ -1,4 +1,4 @@
-# gcloud and kubectl
+# gcloud, gsutil, and (optional) kubectl
 
 `gcloud` and `kubectl` inside docker.
 
@@ -20,12 +20,7 @@ $ docker run --rm -it \
 
 
 ```
-docker run --rm -it \
-  -v /path/where-to-save-gcloud:${HOME} \
-  -v /etc/passwd:/etc/passwd:ro \
-  -v /etc/group:/etc/group:ro \
-  -w ${HOME} \
-  dmitryrck/gcloud bash
+$ docker run --rm -it -v /path/where-to-save-gcloud:/root -w /root dmitryrck/gcloud bash
 ```
 
 # #Protips
